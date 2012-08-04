@@ -3,20 +3,22 @@
     ViewBag.Title = "Happy Fun Link";
 }
 
-<h1>Happy Fun Link</h1>
+
 
 <div id = "MainBox">
-    <p>Insert link to happy funerize</p>
-    @if(Model.HappyLink == null)
-    {
-        using (Html.BeginForm("GenerateLink", "Home"))
-         {
-             @Html.TextBoxFor(x => x.OriginalLink)
-             <input type="submit" value="Generate Happy Fun Link"/>
-         }
-    }
-    else
-    {
-        <p id="HappyLink">Happy Link: @Model.HappyLink</p>
-    }
+    <h1>Happy Fun Link</h1>
+    <div class ="centeredDiv">
+        @if(Model.HappyLink == null)
+        {
+            using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
+            {
+                @Html.TextBoxFor(x => x.OriginalLink, new { @class = "happyTextInput"})
+                <input class="genButton" type="submit" value="Generate Happy Fun Link"/>
+            }
+        }
+        else
+        {
+            <p id="HappyLink">Happy Link: @Model.HappyLink</p>
+        }
+    </div>
 </div>

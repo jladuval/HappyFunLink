@@ -6,12 +6,15 @@
 
 body {
     background-color: #fff;
+    background-image: url("/Content/Images/RainbowWindmills.jpg");
+    background-position:-40px -680px;
     border-top: solid 10px #000;
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    height: 990px;
 }
 
 a {
@@ -63,10 +66,11 @@ h4, h5, h6 {
     color: #000;
     margin-bottom: 0;
     padding-bottom: 0;
+    font-family: verdana;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 6em;
 }
 
 h2 {
@@ -116,6 +120,32 @@ footer {
     height: 100px;
 }
 
+#MainBox {
+    width: 40%;
+    margin:0 auto; 
+    margin-top: 300px;
+    text-align: center;
+}
+
+#MainBox .happyTextInput {
+    font-family: verdana;
+    margin-top: 20px;
+    width: 70%;
+    height: 70px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#MainBox .genButton {
+    font-family: verdana;
+    margin-top: 20px;
+    width: 50%;
+    height: 30px;
+    -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
 
 /* site title
 ----------------------------------------------------------*/
