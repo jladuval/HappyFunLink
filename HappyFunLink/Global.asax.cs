@@ -22,6 +22,7 @@ namespace HappyFunLink
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             DependencyResolver.SetResolver(new NinjectDependencyResolver(NinjectBooster.GetKernel()));
+            TypeMappings.Register();
         }
     }
 }

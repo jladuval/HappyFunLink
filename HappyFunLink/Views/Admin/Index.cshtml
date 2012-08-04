@@ -6,5 +6,36 @@
 
 <h2>Happy Fun Admin!</h2>
 
-@using(Html.BeginForm("AddAdministrator", "Admin")){
+
+<h3>Add a new User</h3>
+@using(Html.BeginForm("AddAdministrator", "Admin", FormMethod.Post)){
+    @Html.LabelFor(x => x.NewUser.FirstName)
+    @Html.TextBoxFor(x => x.NewUser.FirstName)
+    @Html.LabelFor(x => x.NewUser.LastName)
+    @Html.TextBoxFor(x => x.NewUser.LastName)
+    @Html.LabelFor(x => x.NewUser.Email)
+    @Html.TextBoxFor(x => x.NewUser.Email)
+    @Html.LabelFor(x => x.NewUser.Password)
+    @Html.TextBoxFor(x => x.NewUser.Password)
+    <input type ="submit" value="submit"/>
+}
+
+
+<h3>Nouns</h3>
+@using(Html.BeginForm("ModifyNouns", "Admin"))
+{
+    for (int i = 0; i < Model.Nouns.Count; i++)
+    {
+        @Html.TextBoxFor(x => x.Nouns[i].Word)
+    }
+}
+
+
+<h3>Adjectives</h3>
+@using(Html.BeginForm("ModifyAdjectives", "Admin"))
+{
+    for(int i = 0; i < Model.Adjectives.Count; i++)
+    {
+        @Html.TextBoxFor(x => x.Adjectives[i].Word)
+    }
 }

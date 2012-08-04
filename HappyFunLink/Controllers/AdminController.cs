@@ -31,16 +31,16 @@ namespace HappyFunLink.Controllers
 
         public ActionResult Index()
         {
-            return View(new AdminModel());
+            return View(CreateAdminModel());
         }
 
-        public ActionResult AddAdministrator(UserModel model)
+        public ActionResult AddAdministrator(AdminModel model)
         {
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _accounts.CreateUser(model.FirstName, model.LastName, model.Email, model.Password, false);
+                    _accounts.CreateUser(model.NewUser.FirstName, model.NewUser.LastName, model.NewUser.Email, model.NewUser.Password, false);
                     return RedirectToAction("Index");
                 }
                 catch(ArgumentException e)
@@ -48,9 +48,7 @@ namespace HappyFunLink.Controllers
                     ModelState.AddModelError("", e.Message);
                 }
             }
-            var adminModel = CreateAdminModel();
-            adminModel.NewUser = model;
-            return View("Index", adminModel);
+            return View("Index", model);
         }
 
         private AdminModel CreateAdminModel()
