@@ -2,7 +2,6 @@
 {
     using System;
     using System.Web.Security;
-    using Domain.Mailing.Interfaces;
     using Entities;
     using Interfaces;
 
@@ -14,16 +13,13 @@
 
         private readonly RoleProviderBase _roles;
 
-        private readonly IEmailManager _emailManager;
 
         public AccountMembershipService(
             MembershipProviderBase membership,
-            RoleProviderBase roles,
-            IEmailManager emailManager)
+            RoleProviderBase roles)
         {
             _membership = membership;
             _roles = roles;
-            _emailManager = emailManager;
         }
 
         public void RegisterSiteUser(string firstName, string lastName, string email, string password, bool receiveEmails)
@@ -109,13 +105,11 @@
         private void SendWelcomeEmail(string email)
         {
             var user = _membership.GetUser(email);
-            _emailManager.SendWelcomeEmail(user);
         }
 
         private void SendActivationEmail(string email, string activationToken)
         {
             var user = _membership.GetUser(email);
-            _emailManager.SendActivationEmail(user, activationToken);
         }
     }
 }

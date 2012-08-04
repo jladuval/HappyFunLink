@@ -49,10 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mailing\EmailBuilder.cs" />
-    <Compile Include="Mailing\EmailManager.cs" />
-    <Compile Include="Mailing\Interfaces\IEmailBuilder.cs" />
-    <Compile Include="Mailing\Interfaces\IEmailManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,8 +9,6 @@ namespace HappyFunLink.App_Start
     using System.Web.Security;
     using Data.EntityFramework;
     using Data.Interfaces;
-    using Domain.Mailing;
-    using Domain.Mailing.Interfaces;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -58,8 +56,6 @@ namespace HappyFunLink.App_Start
             kernel.Bind<DbContext>().To<DataContext>().InRequestScope();
             kernel.Bind<Func<DbContext>>().ToMethod(c => (() => c.Kernel.Get<DbContext>()));
             kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
-            kernel.Bind<IEmailManager>().To<EmailManager>();
-            kernel.Bind<IEmailBuilder>().To<EmailBuilder>();
 
             //User Config
             kernel.Bind<IMembershipCrypto>().To<MembershipCrypto>();
