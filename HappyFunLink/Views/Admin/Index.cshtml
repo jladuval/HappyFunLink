@@ -1,54 +1,77 @@
-﻿@model HappyFunLink.Models.Admin.AdminModel 
+﻿@using HappyFunLink.Models.Admin
+@model HappyFunLink.Models.Admin.AdminModel 
 
+<script type="text/javascript" src="../../Scripts/CustomScripts/AdminPage.js"></script>
 @{
     ViewBag.Title = "Admin Page";
 }
 
 <div class="centeredDiv">
-    <h2>Happy Fun Admin!</h2>
+    <h1>Happy Fun Admin!</h1>
     @Html.ActionLink("Logout", "Logout", "Admin")
-<h3>Add a new User</h3>
-@using(Html.BeginForm("AddAdministrator", "Admin", FormMethod.Post)){
-    <div class="inputDiv">
-        @Html.LabelFor(x => x.NewUser.FirstName)
-        @Html.TextBoxFor(x => x.NewUser.FirstName)
+    <p>Click titles to toggle menus</p>
+
+    <h3 id="addNewUserToggle">Add a new User</h3>
+    <div id="newUserWrapper">
+        @using(Html.BeginForm("AddAdministrator", "Admin", FormMethod.Post)){
+            <div class="inputDiv">
+                @Html.LabelFor(x => x.NewUser.FirstName)
+                @Html.TextBoxFor(x => x.NewUser.FirstName)
+            </div>
+            <div class="inputDiv">
+            @Html.LabelFor(x => x.NewUser.LastName)
+            @Html.TextBoxFor(x => x.NewUser.LastName)
+                </div>
+            <div class="inputDiv">
+            @Html.LabelFor(x => x.NewUser.Email)
+            @Html.TextBoxFor(x => x.NewUser.Email)
+                </div>
+            <div class="inputDiv">
+            @Html.LabelFor(x => x.NewUser.Password)
+            @Html.PasswordFor(x => x.NewUser.Password)
+                </div>
+            <input type ="submit" value="submit"/>
+        }
     </div>
-    <div class="inputDiv">
-    @Html.LabelFor(x => x.NewUser.LastName)
-    @Html.TextBoxFor(x => x.NewUser.LastName)
-        </div>
-    <div class="inputDiv">
-    @Html.LabelFor(x => x.NewUser.Email)
-    @Html.TextBoxFor(x => x.NewUser.Email)
-        </div>
-    <div class="inputDiv">
-    @Html.LabelFor(x => x.NewUser.Password)
-    @Html.PasswordFor(x => x.NewUser.Password)
-        </div>
-    <input type ="submit" value="submit"/>
-}
 
 
-<h3>Nouns</h3>
-@using(Html.BeginForm("ModifyNouns", "Admin"))
-{
-    for (int i = 0; i < Model.Nouns.Count; i++)
+    <h3 id="nounsToggle">Nouns</h3>
+    <div id="nounsWrapper">
+        <h5>Delete</h5>
+
+        @foreach (var noun in Model.Nouns)
+        {
+            <div class="inputDiv">
+                <a href="#" class="deleteNoun" id="delete-noun-@noun.Id">Delete</a>
+                @noun.Word
+            </div>
+        }
+        <h5>Add</h5>
+        @using(Html.BeginForm("AddNoun", "Admin"))
+        {
+            @Html.TextBoxFor(x => x.NewNoun)
+            <input type="submit" value="Add"/>
+        }
+    </div>
+    <h3 id="adjectivesToggle">Adjectives</h3>
+    <div id="adjectivesWrapper">
+
+    <h5>Delete</h5>
+
+    @foreach (var adjective in Model.Adjectives)
     {
         <div class="inputDiv">
-            @Html.TextBoxFor(x => x.Nouns[i].Word)
+            <a href="#" class="deleteAdjective" id="delete-adjective-@adjective.Id">Delete</a>
+            @adjective.Word
         </div>
     }
-}
 
-
-<h3>Adjectives</h3>
-@using(Html.BeginForm("ModifyAdjectives", "Admin"))
-{
-    for(int i = 0; i < Model.Adjectives.Count; i++)
+    
+    <h5>Add</h5>
+    @using(Html.BeginForm("AddAdjective", "Admin"))
     {
-        <div class="inputDiv">
-           @Html.TextBoxFor(x => x.Adjectives[i].Word)
-        </div>
+        @Html.TextBoxFor(x => x.NewAdjective)
+        <input type="submit" value="Add"/>
     }
-}
-    </div>
+        </div>
+</div>

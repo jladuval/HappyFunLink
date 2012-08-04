@@ -17,5 +17,9 @@
         void InsertNouns(List<Noun> nouns);
 
         void InsertNoun(Noun noun);
+
+        void DeleteNoun(int id);
+
+        void DeleteAdjective(int id);
     }
 }

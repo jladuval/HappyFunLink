@@ -54,6 +54,53 @@ namespace HappyFunLink.Controllers
             return View("Index", model);
         }
 
+        [Authorize]
+        [HttpPost]
+        public ActionResult AddNoun(AdminModel model)
+        {
+            if(!String.IsNullOrEmpty(model.NewNoun))
+            {
+                _adminService.InsertNoun(new Noun {Word = model.NewNoun});
+            }
+            return RedirectToAction("Index");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult AddAdjective(AdminModel model)
+        {
+            if (!String.IsNullOrEmpty(model.NewAdjective))
+            {
+                _adminService.InsertAdjective(new Adjective { Word = model.NewAdjective });
+            }
+            return RedirectToAction("Index");
+        }
+
+        [Authorize]
+        [HttpPost]
+        public void DeleteNoun(int nounId)
+        {
+            _adminService.DeleteNoun(nounId);
+        }
+        
+        [Authorize]
+        [HttpPost]
+        public void DeleteAdjective(int adjId)
+        {
+            _adminService.DeleteAdjective(adjId);
+        }
+
+        [Authorize]
+        [HttpPost]
+        public ActionResult DeleteAdjective(AdminModel model)
+        {
+            if (!String.IsNullOrEmpty(model.NewNoun))
+            {
+                _adminService.InsertNoun(new Noun() { Word = model.NewNoun });
+            }
+            return RedirectToAction("Index");
+        }
+
         public ActionResult Login()
         {
             return View("Login");

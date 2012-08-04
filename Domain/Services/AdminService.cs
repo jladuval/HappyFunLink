@@ -60,5 +60,17 @@
             _nouns.Create(noun);
             _uow.Commit();
         }
+
+        public void DeleteNoun(int id)
+        {
+            _nouns.Delete(x => x.Id == id);
+            _uow.Commit();
+        }
+
+        public void DeleteAdjective(int id)
+        {
+            _adjectives.Delete(x => x.Id == id);
+            _uow.Commit();
+        }
     }
 }
