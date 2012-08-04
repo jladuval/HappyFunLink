@@ -1,7 +1,12 @@
 ﻿namespace HappyFunLink.Models.Home
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class LinkModel
     {
-        public string Link { get; set; }
+        [Required]
+        public string OriginalLink { get; set; }
+
+        public string HappyLink { get; set; }
     }
 }

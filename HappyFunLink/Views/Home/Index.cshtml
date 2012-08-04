@@ -6,11 +6,17 @@
 <h1>Happy Fun Link</h1>
 
 <div id = "MainBox">
-<p>Insert link to happy funerize</p>
-@using(Html.BeginForm("GenerateLink", "Home"))
-{
-		@Html.TextBoxFor(x => x.Link)
-		<input type="submit" value="Generate Happy Fun Link"/>
-}
-<p id="HappyLink">Happy Link: @Model.Link</p>
+    <p>Insert link to happy funerize</p>
+    @if(Model.HappyLink == null)
+    {
+        using (Html.BeginForm("GenerateLink", "Home"))
+         {
+             @Html.TextBoxFor(x => x.OriginalLink)
+             <input type="submit" value="Generate Happy Fun Link"/>
+         }
+    }
+    else
+    {
+        <p id="HappyLink">Happy Link: @Model.HappyLink</p>
+    }
 </div>

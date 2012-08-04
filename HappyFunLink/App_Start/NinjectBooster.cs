@@ -69,6 +69,7 @@ namespace HappyFunLink.App_Start
 
             //Domain Services
             kernel.Bind<IAdminService>().To<AdminService>();
+            kernel.Bind<ILinkService>().To<LinkService>();
         }        
     }
 }
