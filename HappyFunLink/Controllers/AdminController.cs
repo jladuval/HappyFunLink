@@ -6,17 +6,16 @@ namespace HappyFunLink.Controllers
 
     public class AdminController : Controller
     {
-        private readonly MembershipProviderBase accounts;
+        private readonly MembershipProviderBase _accounts;
 
-        public AdminController(MembershipProviderBase _accounts)
+        public AdminController(MembershipProviderBase accounts)
         {
-            accounts = _accounts;
+            accounts = accounts;
         }
 
         public ActionResult Index()
         {
             return View();
         }
-
     }
 }
