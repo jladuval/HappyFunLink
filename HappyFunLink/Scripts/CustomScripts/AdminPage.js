@@ -1,6 +1,6 @@
 ﻿$(function() {
     $('.deleteNoun').click(function() {
-        alert("adsf");
+        this.attr('Id')
     });
     $('.deleteAdjective').click(function () {
         alert("afdgsdfgdfgdsf");
