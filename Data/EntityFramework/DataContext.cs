@@ -12,10 +12,12 @@ namespace Data.EntityFramework
         public DataContext(string nameOrConnectionString)
             : base(nameOrConnectionString)
         {
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Configurations.Add(new UserConfiguration());

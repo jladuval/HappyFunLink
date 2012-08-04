@@ -4,6 +4,8 @@ using Data.Interfaces;
 using Entities;
 
 namespace Domain.Services {
+    using System.Data.Entity;
+
     using Domain.Services.Interfaces;
 
     public class LinkService : ILinkService {
@@ -22,7 +24,7 @@ namespace Domain.Services {
 
 	    public string GetHappyLink(string originalLink)
 	    {
-	        var happyLink = _links.Find(x => x.OriginalLink == originalLink).SingleOrDefault();
+	        var happyLink = _links.Find(x => x.OriginalLink == originalLink).Include(x => x.HappyLink).SingleOrDefault();
 	        if(happyLink == null)
 	        {
 	            happyLink = AssignNewHappyLink(originalLink);
