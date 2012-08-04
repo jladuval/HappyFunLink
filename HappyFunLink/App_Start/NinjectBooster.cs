@@ -9,6 +9,10 @@ namespace HappyFunLink.App_Start
     using System.Web.Security;
     using Data.EntityFramework;
     using Data.Interfaces;
+
+    using Domain.Services;
+    using Domain.Services.Interfaces;
+
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
@@ -62,6 +66,9 @@ namespace HappyFunLink.App_Start
             kernel.Bind<MembershipProviderBase>().ToMethod(e => (MembershipProviderBase)Membership.Provider);
             kernel.Bind<RoleProviderBase>().ToMethod(e => (RoleProviderBase)Roles.Provider);
             kernel.Bind<IAccountService>().To<AccountMembershipService>();
+
+            //Domain Services
+            kernel.Bind<IAdminService>().To<AdminService>();
         }        
     }
 }
