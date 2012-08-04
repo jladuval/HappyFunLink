@@ -90,17 +90,6 @@ namespace HappyFunLink.Controllers
             _adminService.DeleteAdjective(adjId);
         }
 
-        [Authorize]
-        [HttpPost]
-        public ActionResult DeleteAdjective(AdminModel model)
-        {
-            if (!String.IsNullOrEmpty(model.NewNoun))
-            {
-                _adminService.InsertNoun(new Noun() { Word = model.NewNoun });
-            }
-            return RedirectToAction("Index");
-        }
-
         public ActionResult Login()
         {
             return View("Login");
