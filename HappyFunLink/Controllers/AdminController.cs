@@ -12,12 +12,11 @@ namespace HappyFunLink.Controllers
 
         public AdminController(MembershipProviderBase accounts)
         {
-            accounts = accounts;
+            _accounts = accounts;
         }
 
         public ActionResult Index()
         {
-
             return View(new AdminModel());
         }
     }

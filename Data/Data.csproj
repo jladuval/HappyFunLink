@@ -65,6 +65,9 @@
     <Compile Include="Migrations\201208040656300_ag.cs" />
     <Compile Include="Migrations\201208040656300_ag.Designer.cs">
       <DependentUpon>201208040656300_ag.cs</DependentUpon>
+    <Compile Include="Migrations\201208040651153_Everything.cs" />
+    <Compile Include="Migrations\201208040651153_Everything.Designer.cs">
+      <DependentUpon>201208040651153_Everything.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\DefaultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
