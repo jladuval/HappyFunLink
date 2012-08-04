@@ -41,7 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adjective.cs" />
-    <Compile Include="Entity.cs" />
     <Compile Include="EntitySettings.cs" />
     <Compile Include="HappyLink.cs" />
     <Compile Include="Link.cs" />
