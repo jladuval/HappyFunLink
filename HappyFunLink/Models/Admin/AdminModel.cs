@@ -6,8 +6,8 @@
     {
         public UserModel NewUser { get; set; }
 
-        public List<string> Adjectives { get; set; }
+        public List<AdjectiveModel> Adjectives { get; set; }
 
-        public List<string> Nouns { get; set; }
+        public List<NounModel> Nouns { get; set; }
     }
 }
