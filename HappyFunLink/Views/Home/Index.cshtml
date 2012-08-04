@@ -7,6 +7,8 @@
 
 @using(Html.BeginForm("GenerateLink", "Home"))
 {
-    @Html.TextBoxFor(x => x.Link)
-    <input type="submit" value="Submit"/>
+	<div id = "MainBox">
+		@Html.TextBoxFor(x => x.Link)
+		<input type="submit" value="Generate Happy Fun Link"/>
+	</div>
 }

@@ -62,13 +62,9 @@
     <Compile Include="Migrations\201207120921132_InitializeDatabase.Designer.cs">
       <DependentUpon>201207120921132_InitializeDatabase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201208040609029_AddedLinksAndNouns.cs" />
-    <Compile Include="Migrations\201208040609029_AddedLinksAndNouns.Designer.cs">
-      <DependentUpon>201208040609029_AddedLinksAndNouns.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201208042335215_Adjectives.cs" />
-    <Compile Include="Migrations\201208042335215_Adjectives.Designer.cs">
-      <DependentUpon>201208042335215_Adjectives.cs</DependentUpon>
+    <Compile Include="Migrations\201208040656300_ag.cs" />
+    <Compile Include="Migrations\201208040656300_ag.Designer.cs">
+      <DependentUpon>201208040656300_ag.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\DefaultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

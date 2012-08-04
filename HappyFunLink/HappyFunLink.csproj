@@ -139,12 +139,12 @@
     <Compile Include="Models\Home\LinkModel.cs" />
     <Compile Include="Models\Admin\AdminModel.cs" />
     <Compile Include="Models\Admin\UserModel.cs" />
-    <Compile Include="Models\Home\EntityModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.2.intellisense.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
