@@ -2,6 +2,8 @@
 
 namespace HappyFunLink.Controllers
 {
+    using HappyFunLink.Models.Admin;
+
     using WebCore.Security.Interfaces;
 
     public class AdminController : Controller
@@ -15,7 +17,8 @@ namespace HappyFunLink.Controllers
 
         public ActionResult Index()
         {
-            return View();
+
+            return View(new AdminModel());
         }
     }
 }

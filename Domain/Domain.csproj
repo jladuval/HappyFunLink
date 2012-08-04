@@ -51,6 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Interfaces\ILinkService.cs" />
     <Compile Include="Services\LinkService.cs" />
+    <Compile Include="Services\AdminService.cs" />
+    <Compile Include="Services\Interfaces\IAdminService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
