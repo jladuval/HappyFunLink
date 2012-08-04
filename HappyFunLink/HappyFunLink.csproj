@@ -139,7 +139,6 @@
     <Compile Include="Models\Home\LinkModel.cs" />
     <Compile Include="Models\Admin\AdminModel.cs" />
     <Compile Include="Models\Admin\UserModel.cs" />
-    <Compile Include="Models\Home\EntityModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

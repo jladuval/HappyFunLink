@@ -29,19 +29,6 @@ namespace Data.Migration
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "Activations",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        UserId = c.Int(nullable: false),
-                        ConfirmationToken = c.String(maxLength: 128),
-                        ActivatedDate = c.DateTime(storeType: "datetime2"),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("Users", t => t.UserId, cascadeDelete: true)
-                .Index(t => t.UserId);
-            
-            CreateTable(
                 "SiteRegistrations",
                 c => new
                     {
@@ -80,11 +67,9 @@ namespace Data.Migration
             DropIndex("UsersInRoles", new[] { "RoleId" });
             DropIndex("UsersInRoles", new[] { "UserId" });
             DropIndex("SiteRegistrations", new[] { "Id" });
-            DropIndex("Activations", new[] { "UserId" });
             DropForeignKey("UsersInRoles", "RoleId", "Roles");
             DropForeignKey("UsersInRoles", "UserId", "Users");
             DropForeignKey("SiteRegistrations", "Id", "Users");
-            DropForeignKey("Activations", "UserId", "Users");
             DropTable("UsersInRoles");
             DropTable("SiteRegistrations");
             DropTable("Activations");

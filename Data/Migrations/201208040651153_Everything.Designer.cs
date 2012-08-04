@@ -4,11 +4,11 @@ namespace Data.Migration
     using System.Data.Entity.Migrations;
     using System.Data.Entity.Migrations.Infrastructure;
     
-    public sealed partial class AddedLinksAndNouns : IMigrationMetadata
+    public sealed partial class Everything : IMigrationMetadata
     {
         string IMigrationMetadata.Id
         {
-            get { return "201208040609029_AddedLinksAndNouns"; }
+            get { return "201208040651153_Everything"; }
         }
         
         string IMigrationMetadata.Source
