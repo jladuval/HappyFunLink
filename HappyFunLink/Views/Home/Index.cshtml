@@ -7,7 +7,6 @@
 
 <div id = "MainBox">
     <h1>Happy Fun Link</h1>
-    <div class ="centeredDiv">
         @if(Model.HappyLink == null)
         {
             using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
@@ -20,5 +19,4 @@
         {
             <p id="HappyLink">Happy Link: @Model.HappyLink</p>
         }
-    </div>
 </div>

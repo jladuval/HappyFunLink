@@ -63,7 +63,7 @@ mark {
 
 h1, h2, h3,
 h4, h5, h6 {
-    color: #155d19;
+    color: #7e1666;
     margin-bottom: 0;
     padding-bottom: 0;
     font-family: verdana;
@@ -127,6 +127,13 @@ footer {
     text-align: center;
 }
 
+.centeredDiv {
+    width: 40%;
+    margin:0 auto; 
+    margin-top: 300px;
+    text-align: center;
+}
+
 #MainBox .happyTextInput {
     font-family: verdana;
     margin-top: 20px;
@@ -141,8 +148,8 @@ footer {
 #MainBox .genButton {
     font-family: verdana;
     margin-top: 20px;
-    width: 50%;
     height: 30px;
+    width: 300px;
     font-size: 1.5em;
     -webkit-border-radius: 5px;
 -moz-border-radius: 5px;

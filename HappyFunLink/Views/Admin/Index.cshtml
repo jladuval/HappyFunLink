@@ -4,19 +4,29 @@
     ViewBag.Title = "Admin Page";
 }
 
-<h2>Happy Fun Admin!</h2>
+<div class="centeredDiv">
+    <h2>Happy Fun Admin!</h2>
+
 
 
 <h3>Add a new User</h3>
 @using(Html.BeginForm("AddAdministrator", "Admin", FormMethod.Post)){
-    @Html.LabelFor(x => x.NewUser.FirstName)
-    @Html.TextBoxFor(x => x.NewUser.FirstName)
+    <div class="inputDiv">
+        @Html.LabelFor(x => x.NewUser.FirstName)
+        @Html.TextBoxFor(x => x.NewUser.FirstName)
+    </div>
+    <div class="inputDiv">
     @Html.LabelFor(x => x.NewUser.LastName)
     @Html.TextBoxFor(x => x.NewUser.LastName)
+        </div>
+    <div class="inputDiv">
     @Html.LabelFor(x => x.NewUser.Email)
     @Html.TextBoxFor(x => x.NewUser.Email)
+        </div>
+    <div class="inputDiv">
     @Html.LabelFor(x => x.NewUser.Password)
     @Html.TextBoxFor(x => x.NewUser.Password)
+        </div>
     <input type ="submit" value="submit"/>
 }
 
@@ -26,7 +36,9 @@
 {
     for (int i = 0; i < Model.Nouns.Count; i++)
     {
-        @Html.TextBoxFor(x => x.Nouns[i].Word)
+        <div class="inputDiv">
+            @Html.TextBoxFor(x => x.Nouns[i].Word)
+        </div>
     }
 }
 
@@ -36,6 +48,9 @@
 {
     for(int i = 0; i < Model.Adjectives.Count; i++)
     {
-        @Html.TextBoxFor(x => x.Adjectives[i].Word)
+        <div class="inputDiv">
+           @Html.TextBoxFor(x => x.Adjectives[i].Word)
+        </div>
     }
 }
+    </div>
