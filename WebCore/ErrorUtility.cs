@@ -36,11 +36,6 @@
             CheckIfNotNull(value, email, "Cannot find '{0}' user");
         }
 
-        public static void CheckIfNotNull(Activation value, string email)
-        {
-            CheckIfNotNull(value, email, "Cannot find activation info for '{0}'");
-        }
-
         public static void CheckIfNotNull(Role value, string role)
         {
             CheckIfNotNull(value, role, "Cannot find '{0}' role");

@@ -21,8 +21,6 @@ namespace Data.EntityFramework
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new SiteRegistrationConfiguration());
             modelBuilder.Configurations.Add(new RoleConfiguration());
-            modelBuilder.Configurations.Add(new ActivationConfiguration());
-
         }
     }
 }

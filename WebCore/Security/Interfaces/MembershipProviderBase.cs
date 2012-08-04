@@ -21,7 +21,7 @@
         public abstract bool IsUserActivated(string email);
 
         // Site registration
-        public abstract string CreateUser(string firstName, string lastName, string email, string password, bool receiveEmails);
+        public abstract void CreateUser(string firstName, string lastName, string email, string password, bool receiveEmails);
 
         public abstract bool DeleteUser(string email);
 

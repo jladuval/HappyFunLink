@@ -35,8 +35,6 @@
 
         private const int DefaultminRequiredPasswordLength = 8;
 
-        private readonly IRepository<Activation> _activations;
-
         private readonly IDateTimeProvider _dateTime;
 
         private readonly IRepository<SiteRegistration> _siteRegistrations;
@@ -67,7 +65,6 @@
             : this(
                 DependencyResolver.Current.GetService<IUnitOfWork>(),
                 DependencyResolver.Current.GetService<IRepository<User>>(),
-                DependencyResolver.Current.GetService<IRepository<Activation>>(),
                 DependencyResolver.Current.GetService<IRepository<SiteRegistration>>(),
                 DependencyResolver.Current.GetService<IMembershipCrypto>(),
                 DependencyResolver.Current.GetService<IDateTimeProvider>())
@@ -77,14 +74,12 @@
         public ExtendedMembershipProvider(
             IUnitOfWork uow,
             IRepository<User> users,
-            IRepository<Activation> activations,
             IRepository<SiteRegistration> siteRegistrations,
             IMembershipCrypto crypto,
             IDateTimeProvider dateTime)
         {
             _uow = uow;
             _users = users;
-            _activations = activations;
             _siteRegistrations = siteRegistrations;
             _crypto = crypto;
             _dateTime = dateTime;
@@ -251,16 +246,7 @@
 
         public override string ChangeEmail(string currentEmail, string newEmail)
         {
-            ErrorUtility.CheckArgument(currentEmail, "currentEmail");
-            ErrorUtility.CheckArgument(newEmail, "newEmail");
-            AssertUserDoesNotExist(newEmail);
-
-            var user = ExistingUser(currentEmail);
-            user.Email = newEmail;
-            var activation = CreateActivation(user);
-            _uow.Commit();
-
-            return activation.ConfirmationToken;
+            throw new NotImplementedException();
         }
 
         public override void LoginUser(string email)
@@ -289,7 +275,7 @@
             throw new NotImplementedException();
         }
 
-        public override string CreateUser(string firstName, string lastName, string email, string password, bool receiveEmails)
+        public override void CreateUser(string firstName, string lastName, string email, string password, bool receiveEmails)
         {
             ErrorUtility.CheckArgument(firstName, "firstName");
             ErrorUtility.CheckArgument(lastName, "lastName");
@@ -319,11 +305,7 @@
             };
             _siteRegistrations.Create(registration);
 
-            var activation = CreateActivation(user);
-
             _uow.Commit();
-
-            return activation.ConfirmationToken;
         }
 
         public override bool DeleteUser(string username, bool deleteAllRelatedData)
@@ -337,10 +319,6 @@
             var user = GetUser(email);
             if (null == user)
                 return false;
-
-            var activation = _activations.FindById(user.Id);
-            if (null != activation)
-                _activations.Delete(activation);
 
             var siteRegistration = _siteRegistrations.FindById(user.Id);
             if (null != siteRegistration)
@@ -391,23 +369,12 @@
 
         public override bool IsActivationTokenValid(string token)
         {
-            if (string.IsNullOrEmpty(token)) return false;
-            var activation = _activations.Find(e => e.ConfirmationToken == token).Include(e => e.User).SingleOrDefault();
-            var valid = null != activation
-                        && activation.ConfirmationToken.Equals(token, StringComparison.Ordinal);
-            return valid;
+           throw new NotImplementedException();
         }
 
         public override void ActivateUserEmail(string token)
         {
-            ErrorUtility.CheckArgument(token, "token");
-
-            var activation = _activations.Find(e => e.ConfirmationToken == token).Include(e => e.User).SingleOrDefault();
-            if (null == activation)
-                throw new ActivationException(ActivationStatus.TokenNotFound);
-
-            activation.ActivatedDate = _dateTime.Now;
-            _uow.Commit();
+            throw new NotImplementedException();
         }
 
         public override void ResetPasswordWithToken(string token, string newPassword)
@@ -541,7 +508,6 @@
             var valid = passwordHash != null && _crypto.VerifyHashedPassword(passwordHash, password);
             if (valid)
             {
-                if (!IsUserActivated(user)) throw new ActivationException(ActivationStatus.UserNotActivated);
                 ResetLockout(registration);
                 _uow.Commit();
                 return true;
@@ -567,17 +533,12 @@
         
         public override string GetUsernameFromActivationToken(string token)
         {
-            var activation = _activations.Find(x => x.ConfirmationToken == token).Include(x => x.User).Single();
-            if (activation.User == null)
-                throw new ArgumentException("Nonexistent token: " + token);
-            return activation.User.Email;
+            throw new NotImplementedException();
         }
 
         public override bool IsUserActivated(string email)
         {
-            ErrorUtility.CheckArgument(email, "email");
-            var user = ExistingUser(email);
-            return IsUserActivated(user);
+            throw new NotImplementedException();
         }
         #endregion
 
@@ -592,19 +553,7 @@
             if (UserExists(email))
                 throw new MembershipCreateUserException(MembershipCreateStatus.DuplicateEmail);
         }
-
-        private bool IsUserActivated(User user)
-        {
-            return user.Activations.FirstOrDefault().ActivatedDate != null;
-        }
-
-        private Activation CreateActivation(User user)
-        {
-            var activation = new Activation { ConfirmationToken = _crypto.GenerateToken(), User = user };
-            _activations.Create(activation);
-
-            return activation;
-        }
+       
 
         private User ExistingUser(string email)
         {

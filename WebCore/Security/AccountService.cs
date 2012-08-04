@@ -28,10 +28,8 @@
 
         public void RegisterSiteUser(string firstName, string lastName, string email, string password, bool receiveEmails)
         {
-            var activationToken = _membership.CreateUser(firstName, lastName, email, password, receiveEmails);
+            _membership.CreateUser(firstName, lastName, email, password, receiveEmails);
             _roles.AddUserToRole(email, UserRole);
-
-            SendActivationEmail(email, activationToken);
         }
        
         public bool ValidateSiteUser(string email, string password)
