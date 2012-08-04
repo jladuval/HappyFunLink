@@ -18,10 +18,12 @@ namespace HappyFunLink.Controllers
         public ActionResult GenerateLink(LinkModel model)
         {
 			if (ModelState.IsValid) {
-						
+				var thing = new LinkModel() {
+					Link = model.Link
+				};
+				return View("Index", thing);
 			}
-			
-			return View("Index", new LinkModel());
+			return View("Index");
         }
     }
 }
