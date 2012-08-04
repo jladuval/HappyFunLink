@@ -1,4 +1,4 @@
-﻿namespace Template_Project.Models.Home
+﻿namespace HappyFunLink.Models.Home
 {
     public class EntityModel
     {

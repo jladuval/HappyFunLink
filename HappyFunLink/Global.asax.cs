@@ -6,7 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Template_Project
+namespace HappyFunLink
 {
     using App_Start;
     using Ninject.Web.Mvc;

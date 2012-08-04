@@ -1,7 +1,7 @@
-[assembly: WebActivator.PreApplicationStartMethod(typeof(Template_Project.App_Start.NinjectBooster), "Start")]
-[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(Template_Project.App_Start.NinjectBooster), "Stop")]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(HappyFunLink.App_Start.NinjectBooster), "Start")]
+[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(HappyFunLink.App_Start.NinjectBooster), "Stop")]
 
-namespace Template_Project.App_Start
+namespace HappyFunLink.App_Start
 {
     using System;
     using System.Data.Entity;

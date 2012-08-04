@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Template_Project.Models.Home;
+using HappyFunLink.Models.Home;
 
-namespace Template_Project.Controllers
+namespace HappyFunLink.Controllers
 {
     public class HomeController : Controller
     {

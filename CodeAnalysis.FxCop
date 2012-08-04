@@ -24,11 +24,11 @@
   <AssemblyReferenceDirectories>   
    <Directory>C:/Program Files (x86)/Microsoft ASP.NET/ASP.NET MVC 3/Assemblies/</Directory>
   </AssemblyReferenceDirectories>
-   <Target Name="$(ProjectDir)/../Template_Project/bin/WebCore.dll" Analyze="True" AnalyzeAllChildren="True" />
-   <Target Name="$(ProjectDir)/../Template_Project/bin/Data.dll" Analyze="True" AnalyzeAllChildren="True" />
-   <Target Name="$(ProjectDir)/../Template_Project/bin/Domain.dll" Analyze="True" AnalyzeAllChildren="True" />
-   <Target Name="$(ProjectDir)/../Template_Project/bin/Entities.dll" Analyze="True" AnalyzeAllChildren="True" />
-   <Target Name="$(ProjectDir)/../Template_Project/bin/Template_Project.dll" Analyze="True" AnalyzeAllChildren="True" />
+   <Target Name="$(ProjectDir)/../HappyFunLink/bin/WebCore.dll" Analyze="True" AnalyzeAllChildren="True" />
+   <Target Name="$(ProjectDir)/../HappyFunLink/bin/Data.dll" Analyze="True" AnalyzeAllChildren="True" />
+   <Target Name="$(ProjectDir)/../HappyFunLink/bin/Domain.dll" Analyze="True" AnalyzeAllChildren="True" />
+   <Target Name="$(ProjectDir)/../HappyFunLink/bin/Entities.dll" Analyze="True" AnalyzeAllChildren="True" />
+   <Target Name="$(ProjectDir)/../HappyFunLink/bin/HappyFunLink.dll" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
