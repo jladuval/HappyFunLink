@@ -25,7 +25,7 @@ namespace HappyFunLink.Controllers
 			if (ModelState.IsValid) {
 				return View("Index", new LinkModel{ HappyLink = _links.GetHappyLink(model.OriginalLink)});
 			}
-			return View("Index");
+			return View("Index", model);
         }
     }
 }

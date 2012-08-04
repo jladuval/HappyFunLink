@@ -8,7 +8,7 @@ body {
     background-color: #fff;
     background-image: url("/Content/Images/RainbowWindmills.jpg");
     background-position:-40px -680px;
-    border-top: solid 10px #000;
+    border-top: solid 1px #000;
     color: #333;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -63,7 +63,7 @@ mark {
 
 h1, h2, h3,
 h4, h5, h6 {
-    color: #000;
+    color: #155d19;
     margin-bottom: 0;
     padding-bottom: 0;
     font-family: verdana;
@@ -135,6 +135,7 @@ footer {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    font-size: 3em;
 }
 
 #MainBox .genButton {
@@ -142,9 +143,15 @@ footer {
     margin-top: 20px;
     width: 50%;
     height: 30px;
+    font-size: 1.5em;
     -webkit-border-radius: 5px;
 -moz-border-radius: 5px;
 border-radius: 5px;
+}
+
+#MainBox #HappyLink {
+    font-family: verdana;
+    font-size: 1.5em;
 }
 
 /* site title
