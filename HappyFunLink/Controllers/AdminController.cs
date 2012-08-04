@@ -4,6 +4,7 @@ namespace HappyFunLink.Controllers
 {
     using System;
     using System.Collections.Generic;
+    using System.Web.Security;
 
     using AutoMapper;
 
@@ -29,11 +30,13 @@ namespace HappyFunLink.Controllers
             _adminService = adminService;
         }
 
+        [Authorize]
         public ActionResult Index()
         {
             return View(CreateAdminModel());
         }
 
+        [HttpPost]
         public ActionResult AddAdministrator(AdminModel model)
         {
             if (ModelState.IsValid)
@@ -49,6 +52,33 @@ namespace HappyFunLink.Controllers
                 }
             }
             return View("Index", model);
+        }
+
+        public ActionResult Login()
+        {
+            return View("Login");
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginModel model)
+        {
+           if(ModelState.IsValid)
+           {
+               if(_accounts.ValidateUser(model.Email, model.Password))
+               {
+                   _accounts.LoginUser(model.Email);
+                   FormsAuthentication.SetAuthCookie(model.Email, true);
+                   return RedirectToAction("Index");
+               }
+               ModelState.AddModelError("", "Invalid Username/Password");
+           }
+           return View("Login");
         }
 
         private AdminModel CreateAdminModel()

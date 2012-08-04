@@ -6,9 +6,7 @@
 
 <div class="centeredDiv">
     <h2>Happy Fun Admin!</h2>
-
-
-
+    @Html.ActionLink("Logout", "Logout", "Admin")
 <h3>Add a new User</h3>
 @using(Html.BeginForm("AddAdministrator", "Admin", FormMethod.Post)){
     <div class="inputDiv">
@@ -25,7 +23,7 @@
         </div>
     <div class="inputDiv">
     @Html.LabelFor(x => x.NewUser.Password)
-    @Html.TextBoxFor(x => x.NewUser.Password)
+    @Html.PasswordFor(x => x.NewUser.Password)
         </div>
     <input type ="submit" value="submit"/>
 }

@@ -99,7 +99,13 @@ namespace Data.Migration
                 .ForeignKey("Roles", t => t.RoleId, cascadeDelete: true)
                 .Index(t => t.UserId)
                 .Index(t => t.RoleId);
-            
+
+            Sql("INSERT INTO Roles VALUES ('Users', 'Users registered in the system')");
+
+            // Predefined admin user
+            Sql("INSERT INTO Users VALUES ('', '','admin@happyfunlink.com', GETDATE())");
+            Sql("INSERT INTO SiteRegistrations VALUES (1, 'AKS5gxhDzIoiRkb3k1zrnZL7xPPFW9klV8q8aYDsLIqFFVvWrH7WKRhyvVMlUoVk7g==', GETDATE(), 0, NULL, 0, NULL, NULL, NULL, NULL)");
+            Sql("INSERT INTO UsersInRoles VALUES (1, 1)");
         }
         
         public override void Down()

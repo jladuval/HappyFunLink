@@ -1,0 +1,21 @@
+﻿@model HappyFunLink.Models.Admin.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+}
+<div class="centeredDiv">
+<h2>Admin Login</h2>
+    @using (Html.BeginForm("Login", "Admin", FormMethod.Post))
+    {
+        @Html.ValidationSummary()
+        <div class="inputDiv">
+            @Html.LabelFor(x => x.Email)
+            @Html.TextBoxFor(x => x.Email)
+        </div>
+        <div class="inputDiv">
+            @Html.LabelFor(x => x.Password)
+            @Html.PasswordFor(x => x.Password)
+        </div>
+        <input type="submit" value="Login"/>
+    }
+</div>

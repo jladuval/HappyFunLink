@@ -138,6 +138,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin\AdjectiveModel.cs" />
+    <Compile Include="Models\Admin\LoginModel.cs" />
     <Compile Include="Models\Admin\NounModel.cs" />
     <Compile Include="Models\Home\LinkModel.cs" />
     <Compile Include="Models\Admin\AdminModel.cs" />
@@ -173,6 +174,7 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\PageLayout.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
