@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<Dictionary>
+  <Words>
+    <Recognized>
+      <Word>downvote</Word>
+      <Word>exc</Word>
+      <Word>facebook</Word>
+      <Word>forign</Word>
+      <Word>mvc</Word>
+      <Word>ninject</Word>
+      <Word>noticeboard</Word>
+      <Word>noticeboards</Word>
+      <Word>param</Word>
+      <Word>rbs</Word>
+      <Word>uow</Word>
+      <Word>upvote</Word>
+    </Recognized>
+    <Unrecognized />
+    <Deprecated>
+    </Deprecated>
+    <Compound>
+      <Term CompoundAlternate="KeyWords">keywords</Term>
+      <Term CompoundAlternate="PostCode">postcode</Term>
+    </Compound>
+    <DiscreteExceptions />
+  </Words>
+  <Acronyms>
+    <CasingExceptions>
+      <Acronym>RBS</Acronym>
+    </CasingExceptions>
+  </Acronyms>
+</Dictionary>
