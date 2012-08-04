@@ -21,7 +21,11 @@ namespace Data.EntityFramework
             modelBuilder.Configurations.Add(new UserConfiguration());
             modelBuilder.Configurations.Add(new SiteRegistrationConfiguration());
             modelBuilder.Configurations.Add(new RoleConfiguration());
+            modelBuilder.Configurations.Add(new NounConfiguration());
+
             modelBuilder.Configurations.Add(new AdjectiveConfiguration());
+            modelBuilder.Configurations.Add(new LinkConfiguration());
+            modelBuilder.Configurations.Add(new HappyLinkConfiguration());
         }
     }
 }

@@ -43,6 +43,9 @@
     <Compile Include="Adjective.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntitySettings.cs" />
+    <Compile Include="HappyLink.cs" />
+    <Compile Include="Link.cs" />
+    <Compile Include="Noun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="SiteRegistration.cs" />

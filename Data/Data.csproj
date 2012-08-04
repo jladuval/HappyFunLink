@@ -46,6 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\AdjectiveConfiguration.cs" />
+    <Compile Include="Configuration\NounConfiguration.cs" />
+    <Compile Include="Configuration\HappyLinkConfiguration.cs" />
+    <Compile Include="Configuration\LinkConfiguration.cs" />
     <Compile Include="Configuration\RoleConfiguration.cs" />
     <Compile Include="Configuration\SiteRegistrationConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
@@ -58,6 +61,10 @@
     <Compile Include="Migrations\201207120921132_InitializeDatabase.cs" />
     <Compile Include="Migrations\201207120921132_InitializeDatabase.Designer.cs">
       <DependentUpon>201207120921132_InitializeDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201208040609029_AddedLinksAndNouns.cs" />
+    <Compile Include="Migrations\201208040609029_AddedLinksAndNouns.Designer.cs">
+      <DependentUpon>201208040609029_AddedLinksAndNouns.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201208042335215_Adjectives.cs" />
     <Compile Include="Migrations\201208042335215_Adjectives.Designer.cs">

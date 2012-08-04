@@ -1,13 +1,12 @@
-﻿@model HappyFunLink.Models.Home.EntityModel
+﻿@model HappyFunLink.Models.Home.LinkModel
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Happy Fun Link";
 }
 
-<h2>Index</h2>
-<p> Current Value : @Model.Name</p>
+<h1>Happy Fun Link</h1>
 
-@using(Html.BeginForm("ChangeCurrentName", "Home"))
+@using(Html.BeginForm("GenerateLink", "Home"))
 {
-    @Html.TextBoxFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Link)
     <input type="submit" value="Submit"/>
 }

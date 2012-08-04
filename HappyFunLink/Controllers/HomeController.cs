@@ -11,13 +11,17 @@ namespace HappyFunLink.Controllers
     {
         public ActionResult Index()
         {
-            return View(new EntityModel());
+            return View(new LinkModel());
         }
 
         [HttpPost]
-        public ActionResult ChangeCurrentName(EntityModel model)
+        public ActionResult GenerateLink(LinkModel model)
         {
-            return View("Index", new EntityModel());
+			if (ModelState.IsValid) {
+						
+			}
+			
+			return View("Index", new LinkModel());
         }
     }
 }
