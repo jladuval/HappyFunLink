@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\AdjectiveConfiguration.cs" />
     <Compile Include="Configuration\RoleConfiguration.cs" />
     <Compile Include="Configuration\SiteRegistrationConfiguration.cs" />
     <Compile Include="Configuration\UserConfiguration.cs" />
@@ -57,6 +58,10 @@
     <Compile Include="Migrations\201207120921132_InitializeDatabase.cs" />
     <Compile Include="Migrations\201207120921132_InitializeDatabase.Designer.cs">
       <DependentUpon>201207120921132_InitializeDatabase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201208042335215_Adjectives.cs" />
+    <Compile Include="Migrations\201208042335215_Adjectives.Designer.cs">
+      <DependentUpon>201208042335215_Adjectives.cs</DependentUpon>
     </Compile>
     <Compile Include="Migration\DefaultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

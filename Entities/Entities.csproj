@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adjective.cs" />
     <Compile Include="Entity.cs" />
     <Compile Include="EntitySettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
