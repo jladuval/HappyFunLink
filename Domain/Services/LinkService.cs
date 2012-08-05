@@ -24,15 +24,10 @@ namespace Domain.Services {
 
 	    public string GetHappyLink(string originalLink)
 	    {
-	        var happyLink = _links.Find(x => x.OriginalLink == originalLink).Include(x => x.HappyLink).SingleOrDefault();
-	        if(happyLink == null)
-	        {
-	            happyLink = AssignNewHappyLink(originalLink);
-	        }
-	        else
-	        {
-	            happyLink.HappyLink.LastAccessed = DateTime.Now;
-	        }
+	        var happyLink = _links.Find(x => x.OriginalLink == originalLink).Include(x => x.HappyLink).SingleOrDefault()
+	                        ?? AssignNewHappyLink(originalLink);
+
+	        happyLink.HappyLink.LastAccessed = DateTime.Now;
 	                        
 			_unitOfWork.Commit();
 	        return happyLink.HappyLink.Word;
@@ -42,7 +37,7 @@ namespace Domain.Services {
 	    {
 	        var happyLink = new Link
 	            {
-	                HappyLink = _happyLinks.Find(x => x.LastAccessed == null).FirstOrDefault() ?? OhLordWeRanOutOfLinksFuckFuckShitFuck(),
+	                HappyLink = _happyLinks.Find(x => x.LastAccessed == null).OrderBy(r => Guid.NewGuid()).FirstOrDefault() ?? OhLordWeRanOutOfLinksFuckFuckShitFuck(),
                     OriginalLink = originalLink
 	            };
 	        _links.Create(happyLink);
