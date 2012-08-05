@@ -42,6 +42,17 @@ namespace Domain.Services {
 
 	    private Link AssignNewHappyLink(string originalLink)
 	    {
+            if(!originalLink.Trim().StartsWith("http://"))
+            {
+                if (originalLink.Trim().StartsWith("www."))
+                {
+                    originalLink = "http://" + originalLink;
+                }
+                else
+                {
+                    originalLink = "http://www." + originalLink;
+                }
+            }
 	        var happyLink = new Link
 	            {
 	                HappyLink = _happyLinks.Find(x => x.LastAccessed == null).OrderBy(r => Guid.NewGuid()).FirstOrDefault() ?? OhLordWeRanOutOfLinksFuckFuckShitFuck(),
