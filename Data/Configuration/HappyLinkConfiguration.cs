@@ -10,6 +10,5 @@ namespace Data.Configuration
         public HappyLinkConfiguration() {
             HasKey(e => e.Id).Property(e => e.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
         }
-    
     }
 }

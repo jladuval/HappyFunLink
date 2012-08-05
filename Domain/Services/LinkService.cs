@@ -35,7 +35,7 @@ namespace Domain.Services {
 	        }
 	                        
 			_unitOfWork.Commit();
-	        return happyLink.HappyLink.Text;
+	        return happyLink.HappyLink.Word;
 	    }
 
 	    private Link AssignNewHappyLink(string originalLink)
@@ -54,7 +54,7 @@ namespace Domain.Services {
             var emergencyLink = _happyLinks.GetAll().OrderByDescending(x => x.LastAccessed).FirstOrDefault();
             if(emergencyLink == null)
             {
-                emergencyLink = new HappyLink { LastAccessed = DateTime.Now, Text = new Guid().ToString() };
+                emergencyLink = new HappyLink { LastAccessed = DateTime.Now, Word = new Guid().ToString() };
                 _happyLinks.Create(emergencyLink);
             }
             emergencyLink.LastAccessed = DateTime.Now;

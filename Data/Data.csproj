@@ -63,6 +63,14 @@
     <Compile Include="Migrations\201208040737460_InitializeDatabase.Designer.cs">
       <DependentUpon>201208040737460_InitializeDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208050026082_ChangedTextToWord.cs" />
+    <Compile Include="Migrations\201208050026082_ChangedTextToWord.Designer.cs">
+      <DependentUpon>201208050026082_ChangedTextToWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201208050127273_HappyLinkDateTimeIsNowNullable.cs" />
+    <Compile Include="Migrations\201208050127273_HappyLinkDateTimeIsNowNullable.Designer.cs">
+      <DependentUpon>201208050127273_HappyLinkDateTimeIsNowNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\DefaultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
