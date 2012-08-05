@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201208050127273_HappyLinkDateTimeIsNowNullable.Designer.cs">
       <DependentUpon>201208050127273_HappyLinkDateTimeIsNowNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208050150337_SQLTriggers.cs" />
+    <Compile Include="Migrations\201208050150337_SQLTriggers.Designer.cs">
+      <DependentUpon>201208050150337_SQLTriggers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\DefaultConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
