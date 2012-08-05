@@ -3,8 +3,6 @@
     ViewBag.Title = "Happy Fun Link";
 }
 
-
-
 <div id = "MainBox">
     <h1>Happy Fun Link</h1>
         @if(Model.HappyLink == null)
@@ -17,6 +15,7 @@
         }
         else
         {
-            <p id="HappyLink">Happy Link: @Model.HappyLink</p>
+            var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
+            <p id="HappyLink">Happy Link: <a href ="@url">@url</a></p>
         }
 </div>
