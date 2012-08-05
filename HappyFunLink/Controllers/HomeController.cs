@@ -19,6 +19,15 @@ namespace HappyFunLink.Controllers
             return View(new LinkModel());
         }
 
+        public ActionResult Route()
+        {
+            var happylink = Request.Path.Substring(1);
+            if (string.IsNullOrEmpty(happylink)) return RedirectToAction("Index");
+            var link = _links.GetOriginalLink(happylink);
+            if (string.IsNullOrEmpty(link)) return RedirectToAction("Index");
+            return Redirect("www.google.com");
+        }
+
         [HttpPost]
         public ActionResult GenerateLink(LinkModel model)
         {

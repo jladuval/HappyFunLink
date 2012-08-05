@@ -24,6 +24,11 @@ namespace Domain.Services {
 	        _unitOfWork = unitOfWork;
 	    }
 
+        public string GetOriginalLink(string happyLink)
+        {
+            return _links.Find(x => x.HappyLink.Word == happyLink).Select(x => x.OriginalLink).SingleOrDefault();
+        }
+
 	    public string GetHappyLink(string originalLink)
 	    {
 	        var happyLink = _links.Find(x => x.OriginalLink == originalLink).Include(x => x.HappyLink).SingleOrDefault()
@@ -48,7 +53,8 @@ namespace Domain.Services {
 
         private HappyLink OhLordWeRanOutOfLinksFuckFuckShitFuck()
         {
-            var emergencyLink = _happyLinks.GetAll().OrderByDescending(x => x.LastAccessed).FirstOrDefault();
+            var emergencyLink = _happyLinks.GetAll().OrderBy(x => x.LastAccessed).FirstOrDefault();
+            _links.Delete(_links.Find(x => x.HappyLink.Word == emergencyLink.Word).SingleOrDefault());
             if(emergencyLink == null)
             {
                 emergencyLink = new HappyLink { LastAccessed = DateTime.Now, Word = new Guid().ToString() };

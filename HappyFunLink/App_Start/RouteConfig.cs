@@ -21,9 +21,21 @@ namespace HappyFunLink
             );
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
+                name: "Admin",
+                url: "Admin/{action}/{id}",
+                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
+            );
+            
+            routes.MapRoute(
+                name: "Home",
+                url: "Home/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            );
+            
+            routes.MapRoute(
+                name: "Routing",
+                url: "{*url}",
+                defaults: new { controller = "Home", action = "Route"}
             );
         }
     }
