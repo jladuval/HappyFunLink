@@ -17,5 +17,6 @@
         {
             var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
             <p id="HappyLink">Happy Link: <a href ="@url">@url</a></p>
+            @Html.ActionLink("Make Another One!", "Index", "Home")
         }
 </div>
