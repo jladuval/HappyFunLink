@@ -3,6 +3,8 @@ using HappyFunLink.Models.Home;
 
 namespace HappyFunLink.Controllers
 {
+    using System;
+
     using Domain.Services.Interfaces;
 
     public class HomeController : Controller
@@ -14,9 +16,9 @@ namespace HappyFunLink.Controllers
             _links = links;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(LinkModel model = null)
         {
-            return View(new LinkModel());
+            return View("Index", model ?? new LinkModel());
         }
 
         public ActionResult Route()
@@ -25,14 +27,14 @@ namespace HappyFunLink.Controllers
             if (string.IsNullOrEmpty(happylink)) return RedirectToAction("Index");
             var link = _links.GetOriginalLink(happylink);
             if (string.IsNullOrEmpty(link)) return RedirectToAction("Index");
-            return Redirect("www.google.com");
+            return new RedirectResult(happyLink);
         }
 
         [HttpPost]
         public ActionResult GenerateLink(LinkModel model)
         {
 			if (ModelState.IsValid) {
-				return View("Index", new LinkModel{ HappyLink = _links.GetHappyLink(model.OriginalLink)});
+				return RedirectToAction("Index", new LinkModel{ HappyLink = _links.GetHappyLink(model.OriginalLink)});
 			}
 			return View("Index", model);
         }
