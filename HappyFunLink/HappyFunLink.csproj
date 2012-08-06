@@ -148,6 +148,8 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\Logo.png" />
     <Content Include="Content\Images\RainbowWindmills.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />

@@ -4,13 +4,13 @@
 }
 
 <div id = "MainBox">
-    <h1>Happy Fun Link</h1>
+    <img src = "content/images/logo.png" alt = "Fluffy Link"/>
         @if(Model.HappyLink == null)
         {
             using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
             {
-                @Html.TextBoxFor(x => x.OriginalLink, new { @class = "happyTextInput"})
-                <input class="genButton" type="submit" value="Generate Happy Fun Link"/>
+                @Html.TextAreaFor(x => x.OriginalLink, new { @class = "happyTextInput"})
+                <input class="genButton" type="submit" value="Generate"/>
             }
         }
         else

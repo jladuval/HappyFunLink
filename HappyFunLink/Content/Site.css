@@ -137,23 +137,34 @@ footer {
     font-family: verdana;
     margin-top: 20px;
     width: 70%;
-    height: 70px;
-    min-width: 300px;
+    height: 140px;
+    min-width: 200px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 3em;
+	
+	resize: none;
+	
+	-moz-box-shadow: 3px 3px 5px #444444;
+	-webkit-box-shadow: 3px 3px 5px #444444;
+	box-shadow: 3px 3px 5px #444444;
 }
 
 #MainBox .genButton {
     font-family: verdana;
-    margin-top: 20px;
-    height: 30px;
-    width: 300px;
-    font-size: 1.5em;
+    margin-top: 10px;
+    width: 70%;
+    height: 74px;
+    min-width: 200px;
+    font-size: 3em;
     -webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+
+	-moz-box-shadow: 3px 3px 5px #444444;
+	-webkit-box-shadow: 3px 3px 5px #444444;
+	box-shadow: 3px 3px 5px #444444;
 }
 
 #MainBox #HappyLink {
