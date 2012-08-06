@@ -15,15 +15,23 @@
 
         private readonly IRepository<Noun> _nouns;
 
+        private readonly IRepository<HappyLink> _happyLinks;
+
+        private readonly IRepository<Link> _links;
+
         private readonly IUnitOfWork _uow;
 
         public AdminService(
             IRepository<Adjective> adjectives, 
             IRepository<Noun> nouns,
+            IRepository<HappyLink> happyLinks,
+            IRepository<Link> links,
             IUnitOfWork uow)
         {
             _adjectives = adjectives;
             _nouns = nouns;
+            _happyLinks = happyLinks;
+            _links = links;
             _uow = uow;
         }
 
@@ -63,13 +71,17 @@
 
         public void DeleteNoun(int id)
         {
-            _nouns.Delete(x => x.Id == id);
+            var noun = _nouns.FindById(id);
+           _happyLinks.Delete(x => x.Word.Contains(noun.Word) && x.LastAccessed == null);
+            _nouns.Delete(noun);
             _uow.Commit();
         }
 
         public void DeleteAdjective(int id)
         {
-            _adjectives.Delete(x => x.Id == id);
+            var adj = _adjectives.FindById(id);
+            _happyLinks.Delete(x => x.Word.Contains(adj.Word) && x.LastAccessed == null);
+            _adjectives.Delete(adj);
             _uow.Commit();
         }
     }
