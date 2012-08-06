@@ -15,9 +15,10 @@ namespace HappyFunLink.Controllers
             _links = links;
         }
 
-        public ActionResult Index(LinkModel model = null)
+        public ActionResult Index(LinkModel model)
         {
             if(model == null) model = new LinkModel();
+            ModelState.Clear();
             return View("Index", model);
         }
 
