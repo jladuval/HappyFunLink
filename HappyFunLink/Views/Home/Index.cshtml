@@ -11,7 +11,7 @@
     {
         using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
         {
-            @Html.TextAreaFor(x => x.OriginalLink, new { @class = "happyTextInput", @placeholder="Enter boring url here..."})
+            @Html.TextBoxFor(x => x.OriginalLink, new { @class = "happyTextInput", @placeholder="Enter boring url here..."})
             <input class="genButton" type="submit" value="Make it Fluffy!"/>
         }
     }

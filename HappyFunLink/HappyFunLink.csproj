@@ -153,6 +153,7 @@
     <Content Include="Content\Images\RainbowWindmills.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <None Include="Properties\PublishProfiles\HappyFtp.pubxml" />
     <None Include="Properties\PublishProfiles\jacob2.pubxml" />
     <None Include="Scripts\jquery-1.7.2.intellisense.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
