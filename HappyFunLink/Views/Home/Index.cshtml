@@ -4,19 +4,21 @@
 }
 
 <div id = "MainBox">
-    <img src = "content/images/Logo.png" alt = "Fluffy Link"/>
-        @if(Model.HappyLink == null)
+    <div class="logoWrapper">
+        <img id="fluffyLogo" src = "@Url.Content("~/content/images/Logo.png")" alt = "Fluffy Link"/>
+        </div>
+    @if(Model.HappyLink == null)
+    {
+        using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
         {
-            using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
-            {
-                @Html.TextAreaFor(x => x.OriginalLink, new { @class = "happyTextInput", @placeholder="Enter boring url here..."})
-                <input class="genButton" type="submit" value="Make it Fluffy!"/>
-            }
+            @Html.TextAreaFor(x => x.OriginalLink, new { @class = "happyTextInput", @placeholder="Enter boring url here..."})
+            <input class="genButton" type="submit" value="Make it Fluffy!"/>
         }
-        else
-        {
-            var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
-            <p id="HappyLink">Happy Link: <a href ="@url">@url</a></p>
-            @Html.ActionLink("Make Another One!", "Index", "Home")
-        }
+    }
+    else
+    {
+        var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
+        <p id="HappyLink">Happy Link: <a href ="@url">@url</a></p>
+        @Html.ActionLink("Make Another One!", "Index", "Home")
+    }
 </div>
