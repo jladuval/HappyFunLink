@@ -42,16 +42,9 @@ namespace Domain.Services {
 
 	    private Link AssignNewHappyLink(string originalLink)
 	    {
-            if(!originalLink.Trim().StartsWith("http://"))
+            if(!originalLink.Trim().Contains("://"))
             {
-                if (originalLink.Trim().StartsWith("www."))
-                {
-                    originalLink = "http://" + originalLink;
-                }
-                else
-                {
-                    originalLink = "http://www." + originalLink;
-                }
+                originalLink = "http://" + originalLink;
             }
 	        var happyLink = new Link
 	            {
