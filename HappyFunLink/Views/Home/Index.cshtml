@@ -4,13 +4,13 @@
 }
 
 <div id = "MainBox">
-    <h1>Happy Fun Link</h1>
+    <h1>Fluffy Link</h1>
         @if(Model.HappyLink == null)
         {
             using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
             {
-                @Html.TextBoxFor(x => x.OriginalLink, new { @class = "happyTextInput"})
-                <input class="genButton" type="submit" value="Generate Happy Fun Link"/>
+                @Html.TextBoxFor(x => x.OriginalLink, new { @class = "happyTextInput" , @placeholder="Enter boring url here..."})
+                <input class="genButton" type="submit" value="Make It Fun!"/>
             }
         }
         else
