@@ -219,6 +219,12 @@ footer {
     }
 }
 
+@media all and (max-width: 500px){
+    body {
+        font-size:0.2em;
+    }
+}
+
 
 
 /* styles for validation helpers */
