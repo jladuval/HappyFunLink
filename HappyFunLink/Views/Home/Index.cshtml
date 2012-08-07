@@ -18,7 +18,8 @@
     else
     {
         var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
-        <p id="HappyLink">Happy Link: <a href ="@url">@url</a></p>
+        <p id="HappyLink">Happy Link: <a href ="@url">@url.Replace("http://", "")</a></p>
         @Html.ActionLink("Make Another One!", "Index", "Home")
     }
 </div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/CustomScripts/HomepageScripts.js")"></script>
