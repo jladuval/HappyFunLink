@@ -2,6 +2,7 @@
     background-color: #e2e2e2;
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body {
@@ -17,7 +18,13 @@ body {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
-    height: 990px;
+    height: auto;
+    width: 100%;
+     position:absolute; 
+
+    top:0px;
+
+    bottom:0px;
 }
 
 a {
@@ -128,6 +135,8 @@ footer {
     margin:0 auto; 
     margin-top: 7%;
     text-align: center;
+
+    height:100%
 }
 
 .centeredDiv {

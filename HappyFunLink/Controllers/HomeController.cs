@@ -37,7 +37,7 @@ namespace HappyFunLink.Controllers
 			if (ModelState.IsValid) {
 				return RedirectToAction("Index", new LinkModel{ HappyLink = _links.GetHappyLink(model.OriginalLink)});
 			}
-			return View("Index", model);
+			return RedirectToAction("Index");
         }
     }
 }
