@@ -193,15 +193,30 @@ footer {
 }
 
 @media all and (max-width: 1500px){
-    body {font-size:0.6em;}
+    body {
+        font-size:0.6em;
+    }
+    input {
+        height: 60px !important;
+    }
 }
 
 @media all and (max-width: 1000px){
-    body {font-size:0.4em;}
+    body {
+        font-size:0.4em;
+    }
+    input {
+        height: 50px !important;
+    }
 }
 
 @media all and (max-width: 600px){
-    body {font-size:0.3em;}
+    body {
+        font-size:0.3em;
+    }
+    input {
+        height: 40px !important;
+    }
 }
 
 
