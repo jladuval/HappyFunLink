@@ -219,15 +219,6 @@ footer {
     }
 }
 
-@media all and (max-width: 450px){
-    body {
-        font-size:0.17em;
-    }
-    input {
-        height: 30px !important;
-    }
-}
-
 
 
 /* styles for validation helpers */
