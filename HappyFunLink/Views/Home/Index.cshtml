@@ -18,8 +18,12 @@
     else
     {
         var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
-        <p id="HappyLink">Happy Link: <a href ="@url">@url.Replace("http://", "")</a></p>
+        <p id="HappyLink"><a href ="@url">@url.Replace("http://", "")</a></p>
+		
         @Html.ActionLink("Make Another One!", "Index", "Home")
-    }
+		<input type="button" id="copy" name="copy" value="Copy to Clipboard" />
+
+
+	}
 </div>
 <script type="text/javascript" src="@Url.Content("~/Scripts/CustomScripts/HomepageScripts.js")"></script>
