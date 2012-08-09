@@ -150,6 +150,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\PixelRainbow.png" />
+    <Content Include="Content\Images\rainbow.png" />
     <Content Include="Content\Images\RainbowWindmills.jpg" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
@@ -170,6 +172,7 @@
     <Content Include="Scripts\jquery.validate.min.js">
       <DependentUpon>jquery.validate.js</DependentUpon>
     </Content>
+    <Content Include="Scripts\jquery.zclip.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
