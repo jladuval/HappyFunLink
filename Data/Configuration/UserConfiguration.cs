@@ -1,8 +1,10 @@
-﻿namespace Data.Configuration
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
+using Entities;
+
+namespace Data.Configuration
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.Data.Entity.ModelConfiguration;
-    using Entities;
+    
 
     internal class UserConfiguration : EntityTypeConfiguration<User>
     {

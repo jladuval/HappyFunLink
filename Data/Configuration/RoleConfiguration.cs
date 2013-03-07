@@ -1,6 +1,7 @@
-﻿namespace Data.Configuration
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Data.Configuration
 {
-    using System.ComponentModel.DataAnnotations;
     using System.Data.Entity.ModelConfiguration;
     using Entities;
 
