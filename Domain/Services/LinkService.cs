@@ -57,13 +57,8 @@ namespace Domain.Services {
 
         private HappyLink OhLordWeRanOutOfLinksFuckFuckShitFuck()
         {
-            var emergencyLink = _happyLinks.GetAll().OrderBy(x => x.LastAccessed).FirstOrDefault();
-            _links.Delete(_links.Find(x => x.HappyLink.Word == emergencyLink.Word).SingleOrDefault());
-            if(emergencyLink == null)
-            {
-                emergencyLink = new HappyLink { LastAccessed = DateTime.Now, Word = new Guid().ToString() };
-                _happyLinks.Create(emergencyLink);
-            }
+            var emergencyLink = new HappyLink { LastAccessed = DateTime.Now, Word = Guid.NewGuid().ToString() };
+            _happyLinks.Create(emergencyLink);
             emergencyLink.LastAccessed = DateTime.Now;
             return emergencyLink;
         }

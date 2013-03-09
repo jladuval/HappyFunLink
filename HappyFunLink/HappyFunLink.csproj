@@ -50,6 +50,12 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -63,6 +69,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Services.Client" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -148,28 +155,34 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\flat-ui.css" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-16.dev.svg" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-16.svg" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-24.dev.svg" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-24.svg" />
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\subtle_white_feathers.png" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-16.eot" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-16.ttf" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-16.woff" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-24.eot" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-24.ttf" />
+    <Content Include="Content\Fonts\Flat-UI-Icons-24.woff" />
     <None Include="Properties\PublishProfiles\HappyFtp.pubxml" />
     <None Include="Properties\PublishProfiles\jacob2.pubxml" />
-    <None Include="Scripts\jquery-1.7.2.intellisense.js">
-      <DependentUpon>jquery-1.7.2.js</DependentUpon>
-    </None>
     <Content Include="Scripts\CustomScripts\AdminPage.js" />
     <Content Include="Scripts\CustomScripts\HomepageScripts.js" />
-    <Content Include="Scripts\jquery-1.7.2.js" />
-    <Content Include="Scripts\jquery-1.7.2.min.js">
-      <DependentUpon>jquery-1.7.2.js</DependentUpon>
-    </Content>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery.placeholder.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js">
       <DependentUpon>jquery.validate.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery.zclip.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

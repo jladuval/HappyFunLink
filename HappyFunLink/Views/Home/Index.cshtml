@@ -4,22 +4,44 @@
 }
 
 <div id = "MainBox">
-    <div class="logoWrapper">
-        <img id="fluffyLogo" src = "@Url.Content("~/content/images/Logo.png")" alt = "Fluffy Link"/>
-        </div>
     @if(Model.HappyLink == null)
     {
         using(@Html.BeginForm("GenerateLink", "Home", FormMethod.Post))
         {
-            @Html.TextBoxFor(x => x.OriginalLink, new { @class = "happyTextInput", @placeholder="Enter boring url here..."})
-            <input class="genButton" type="submit" value="Make it Fluffy!"/>
+            <div class="row">
+                <div class="span4"></div>
+                <div class="span4 fluffyinput">
+                    @Html.TextBoxFor(x => x.OriginalLink, new { @class = "input-large", @placeholder="Enter boring url here..."})
+                </div>
+                <div class="span4"></div>
+            </div>
+            <div class="row">
+                <div class="span4"></div>
+                <div class="span4 fluffybutton">
+                    <input type="submit" class="btn btn-large btn-primary" value="Make it Fluffy!"/>
+                </div>
+                <div class="span4"></div>
+            </div>
         }
     }
     else
     {
-        var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
-        <p id="HappyLink">Happy Link: <a href ="@url">@url.Replace("http://", "")</a></p>
-        @Html.ActionLink("Make Another One!", "Index", "Home")
+         <div class="row">
+                <div class="span4"></div>
+             <div class="span4">
+                 @{
+                     var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
+                 }
+                 <p id="HappyLink"><a href ="@url">@url.Replace("http://", "")</a></p>
+             </div>
+                <div class="span4"></div>
+            </div>
+            <div class="row">
+                <div class="span4"></div>
+                <div class="span4 fluffybutton">
+                    @Html.ActionLink("Make Another One!", "Index", "Home")
+                </div>
+                <div class="span4"></div>
+            </div>
     }
 </div>
-<script type="text/javascript" src="@Url.Content("~/Scripts/CustomScripts/HomepageScripts.js")"></script>
