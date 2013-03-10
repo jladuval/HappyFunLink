@@ -257,7 +257,9 @@ h6 {
     color: white; }
   .btn.btn-large {
     padding-bottom: 12px;
-    padding-top: 13px; }
+    padding-top: 13px; 
+    width: 300px;
+  }
   .btn.btn-primary {
     background-color: #1abc9c; }
     .btn.btn-primary:hover, .btn.btn-primary:focus {
@@ -311,7 +313,7 @@ h6 {
 }
 
 .headline {
-  padding: 50px 0 50px;
+  padding: 100px 0 0 0;
   text-align: center; }
 
 logo-wrapper {
@@ -321,12 +323,12 @@ logo-wrapper {
   line-height: 100px; }
   .logo-wrapper .logo {
     background: url("../content/images/logo.png") center 0 no-repeat;
-    background-size: 500px 300px;
-    height: 300px;
+    background-size: 400px 200px;
+    height: 200px;
     margin: 0 auto 26px;
     overflow: hidden;
     text-indent: -9999em;
-    width: 500px; }
+    width: 400px; }
   .logo-wrapper small {
     color: rgba(52, 73, 94, 0.3);
     display: block;
