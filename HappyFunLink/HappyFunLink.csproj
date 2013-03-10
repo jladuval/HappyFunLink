@@ -158,7 +158,6 @@
     <Content Include="Content\Images\favicon.ico" />
     <Content Include="Content\Images\Logo.png" />
     <Content Include="Content\Images\subtle_white_feathers.png" />
-    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Fonts\Flat-UI-Icons-16.eot" />
     <Content Include="Content\Fonts\Flat-UI-Icons-16.ttf" />
