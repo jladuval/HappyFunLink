@@ -1,4 +1,5 @@
-﻿@model HappyFunLink.Models.Home.LinkModel
+﻿
+@model HappyFunLink.Models.Home.LinkModel
 @{
     ViewBag.Title = "Fluffy Link";
 }
@@ -12,6 +13,7 @@
                 <div class="span4"></div>
                 <div class="span4 fluffyinput">
                     @Html.TextBoxFor(x => x.OriginalLink, new { @class = "input-xlarge", @placeholder="Enter boring url here..."})
+                    @Html.ValidationMessageFor(m => m.OriginalLink)
                 </div>
                 <div class="span4"></div>
             </div>
