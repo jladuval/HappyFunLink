@@ -34,7 +34,7 @@
                  @{
                      var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
                  }
-                 <p><a href ="@url">@url.Replace("http://", "")</a></p>
+                 <p><a href ="@url">@url</a></p>
              </div>
                 <div class="span6"></div>
             </div>
