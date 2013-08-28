@@ -29,14 +29,15 @@
     else
     {
          <div class="row">
-                <div class="span3"></div>
+             <div class="span3"></div>
              <div class="span6 generatedLink">
                  @{
                      var url = @Request.Url.GetLeftPart(UriPartial.Authority) + '/' + @Model.HappyLink;
                  }
-                 <p><a href ="@url">@url</a></p>
+
+                 <p><a href ="@url">@url</a> <span class="clippy">@url</span></p>
              </div>
-                <div class="span6"></div>
-            </div>
+             <div class="span6"></div>
+         </div>
     }
 </div>
