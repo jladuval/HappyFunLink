@@ -167,9 +167,6 @@
     <Content Include="Content\Fonts\Flat-UI-Icons-24.woff" />
     <None Include="Properties\PublishProfiles\HappyFtp.pubxml" />
     <None Include="Properties\PublishProfiles\jacob2.pubxml" />
-    <Content Include="Scripts\Clippy\clippy.swf" />
-    <Content Include="Scripts\Clippy\jquery.clippy.js" />
-    <Content Include="Scripts\Clippy\swfobject.js" />
     <Content Include="Scripts\CustomScripts\AdminPage.js" />
     <Content Include="Scripts\CustomScripts\HomepageScripts.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
